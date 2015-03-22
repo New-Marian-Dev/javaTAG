@@ -7,10 +7,10 @@ public class Main {
     public static void main(String[] args) {
 	    System.out.println("Hello World");
 
-        startGame();
+        startTest();
     }
 
-    public static void startGame(){
+    public static void startTest(){
         Player newPlayer = new Player();
         //index numbers for playerStats are as follows: 0 = Health; 1 = Defence;
         List<List<Integer>> playerStats = newPlayer.initializeStats();
@@ -36,6 +36,8 @@ public class Main {
         System.out.println("Your current health is " + playerHealth);
 
         System.out.println("Your current inventory is: " + headSlot.get(0).itemName + ", " + bodySlot.get(0).itemName + ", " + legSlot.get(0).itemName);
+
+        System.out.println("You look down, and see something, it appears to be a " + );
 
 
     }
