@@ -10,7 +10,7 @@ public class Items {
     public String itemType;
     public List<Items> itemSlot;
 
-    public Items generateRandTestItem(){
+    public static Items generateRandTestItem(){
         final int min = 0;
         final int max = 5;
 
@@ -54,7 +54,24 @@ public class Items {
                 break;
 
             case 4:
-                Items 
+                Items dagger = new Items();
+                dagger.itemName = "Rusty Dagger";
+                dagger.itemType = "Holy Mace of the Undaunted";
+
+                result = dagger;
+                break;
+
+            case 5:
+                Items sword = new Items();
+                sword.itemName = "Broad Sword";
+                sword.itemType = "Long Stabby Stick";
+
+                result = sword;
+                break;
+
+            default:
+                System.out.println("Something Fucked up in generation!");
+                break;
 
         }
         return result;

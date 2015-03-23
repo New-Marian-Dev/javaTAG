@@ -28,6 +28,7 @@ public class Main {
         System.out.print("Please enter a name: ");
 
         newPlayer.name = Input.get().next(); //Sets player name
+        Items genTest = Items.generateRandTestItem();
 
         System.out.println("Your player character is named " + newPlayer.name + " and has " + playerHealth + " health and " + playerDefence + " defence.");
         System.out.println("Oh no! as you walked out of the temple of Phalumis, you tripped and fell, hitting your head on a rock!");
@@ -37,7 +38,7 @@ public class Main {
 
         System.out.println("Your current inventory is: " + headSlot.get(0).itemName + ", " + bodySlot.get(0).itemName + ", " + legSlot.get(0).itemName);
 
-        System.out.println("You look down, and see something, it appears to be a " + );
+        System.out.println("You look down, and see something, it appears to be a " + genTest.itemName);
 
 
     }
