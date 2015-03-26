@@ -14,7 +14,7 @@ public class Player {
 
 
     //Used only at startup, creates the base stats of the player, and an 2d list of the stats.
-    public List<List<Integer>> initializeStats(){
+    public List<List<Integer>> initializeTestStats(){
 
         intHealth = 100;
         intDefence = 10;
@@ -31,7 +31,7 @@ public class Player {
         return stats;
     }
 
-    public List<List<Items>> initializeInventory(){
+    public List<List<Items>> initializeTestInventory(){
         List<List<Items>> inventory = new ArrayList<List<Items>>();
 
         List<Items> headSlot = new ArrayList<Items>();

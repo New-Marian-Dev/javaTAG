@@ -13,13 +13,13 @@ public class Main {
     public static void startTest(){
         Player newPlayer = new Player();
         //index numbers for playerStats are as follows: 0 = Health; 1 = Defence;
-        List<List<Integer>> playerStats = newPlayer.initializeStats();
+        List<List<Integer>> playerStats = newPlayer.initializeTestStats();
         Integer playerHealth = playerStats.get(0).get(0);
         Integer playerDefence = playerStats.get(1).get(0);
         //I'll eventually try and streamline this, but it'll work for now
         //The currently worn armour is in index 0 of each slot, may do away with the "bag" and just sort by slot.
         //Or may use "bag" for misc items if I ever make them.
-        List<List<Items>> playerInventory = newPlayer.initializeInventory();
+        List<List<Items>> playerInventory = newPlayer.initializeTestInventory();
         List<Items> headSlot = playerInventory.get(0);
         List<Items> bodySlot = playerInventory.get(1);
         List<Items> legSlot = playerInventory.get(2);
