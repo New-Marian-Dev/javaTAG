@@ -1,6 +1,7 @@
 package com.company;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -75,6 +76,49 @@ public class Items {
 
         }
         return result;
+    }
+
+
+    public static List<List<Items>> generatePlayerInitialInventory(String playerClass){ //Generates a starter inventory for the player based on class
+        List<List<Items>> inventory = new ArrayList<List<Items>>();
+
+        List<Items> headSlot = new ArrayList<Items>();
+        List<Items> bodySlot = new ArrayList<Items>();
+        List<Items> legSlot = new ArrayList<Items>();
+        List<Items> footSlot = new ArrayList<Items>();
+        List<Items> weaponSlot = new ArrayList<Items>();
+
+        inventory.add(headSlot);
+        inventory.add(bodySlot);
+        inventory.add(legSlot);
+        inventory.add(footSlot);
+        inventory.add(weaponSlot);
+
+        Items clericHelmet = new Items();
+        clericHelmet.itemType
+
+        switch(playerClass){
+
+            //Indexes for the slots: Head = 0, Body = 1, Legs = 2, Feet = 3, Weapon = 4;
+            case "Cleric":
+                List<List<Items>> clericInventory = inventory;
+
+
+
+
+                return clericInventory;
+            break;
+
+            case "Warrior":
+                List<List<Items>> warriorInventory = inventory;
+
+
+
+                return warriorInventory;
+            break;
+        }
+
+
     }
 
 }

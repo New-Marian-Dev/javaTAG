@@ -1,6 +1,5 @@
 package com.company;
 
-import com.sun.deploy.panel.ITreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,5 +63,9 @@ public class Player {
         legSlot.add(simpleBoots);
 
         return inventory;
+    }
+
+    public static Player playerCreation(String name){
+
     }
 }
