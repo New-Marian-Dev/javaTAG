@@ -1,13 +1,16 @@
 package com.company;
 
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Player {
 
     //Store name, health, and defence for later use. May be replaced by the List in the initialize Stats method.
     public String name;
+    public String playerClass;
     public static int intHealth;
     public static int intDefence;
 
@@ -65,7 +68,29 @@ public class Player {
         return inventory;
     }
 
-    public static Player playerCreation(String name){
+    public static Player playerCreation(){
+        Player player = new Player(); //Creates "Player"
+        //Just a list of classes to choose from, it'll be small for now
+        ArrayList<String> classes = new ArrayList<>();
+        classes.add("Cleric");
+        classes.add("Warrior");
+        //Starts player interaction
+        System.out.println("Hello traveler! What's your name?");
+        System.out.print("Enter Name: ");
+        Scanner playerName = Input.get(); //get player input for their name
+        player.name = playerName.toString();
+        System.out.println("Well then " + playerName + ", what kind of adventurer are you?");
+        int listNum = 1; //Only ued for this "for" loop
+        for(String choice : classes){
+            System.out.println(listNum + choice);
+            listNum++;
+        }
+        System.out.print("Choose your class: ");
+        Scanner playerClass = Input.get();
+        player.playerClass = playerClass.toString();
+        System.out.print("\n " + playerName + " the " + playerClass + " eh? Well good luck on your journey friend.");
+
+        return player;
 
     }
 }

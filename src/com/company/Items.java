@@ -11,6 +11,7 @@ public class Items {
     public String itemType;
     public List<Items> itemSlot;
 
+
     public static Items generateRandTestItem(){
         final int min = 0;
         final int max = 5;
@@ -79,7 +80,7 @@ public class Items {
     }
 
 
-    public static List<List<Items>> generatePlayerInitialInventory(String playerClass){ //Generates a starter inventory for the player based on class
+    public static List<List<Items>> generatePlayerInitialInventory(int playerClass){ //Generates a starter inventory for the player based on class
         List<List<Items>> inventory = new ArrayList<List<Items>>();
 
         List<Items> headSlot = new ArrayList<Items>();
@@ -93,29 +94,53 @@ public class Items {
         inventory.add(legSlot);
         inventory.add(footSlot);
         inventory.add(weaponSlot);
+        //Be sure to make the types somewhat relevant to what they actually are
 
+        //First is cleric Items
         Items clericHelmet = new Items();
-        clericHelmet.itemType
+        clericHelmet.itemType = "Simple Helmet";
+        clericHelmet.itemName = "Cleric's Cap";
+        clericHelmet.itemSlot = inventory.get(0);
+        Items clericCuirass = new Items();
+        clericCuirass.itemType = "Simple Cuirass";
+        clericCuirass.itemName = "Cleric's Vest";
+        clericCuirass.itemSlot = inventory.get(1);
+        Items clericGrieves = new Items();
+        clericGrieves.itemType = "Simple Grieves";
+        clericGrieves.itemName = "Clerics Grieves";
+        clericGrieves.itemSlot = inventory.get(2);
+        Items clericSabatons = new Items();
+        clericSabatons.itemType = "Simple Sabatons";
+        clericSabatons.itemName = "Cleric Sabatons";
+        clericSabatons.itemSlot = inventory.get(3);
 
         switch(playerClass){
 
             //Indexes for the slots: Head = 0, Body = 1, Legs = 2, Feet = 3, Weapon = 4;
-            case "Cleric":
+            //Classes are: 1. Cleric, 2.Warrior
+            case 1:
                 List<List<Items>> clericInventory = inventory;
 
-
-
+                clericInventory.get(0).add(clericHelmet);
+                clericInventory.get(1).add(clericCuirass);
+                clericInventory.get(2).add(clericGrieves);
+                clericInventory.get(3).add(clericSabatons);
 
                 return clericInventory;
             break;
 
-            case "Warrior":
+            case 2:
                 List<List<Items>> warriorInventory = inventory;
 
 
 
                 return warriorInventory;
             break;
+
+            default:
+                System.out.print("Class Selection Failed");
+                return inventory;
+
         }
 
 
