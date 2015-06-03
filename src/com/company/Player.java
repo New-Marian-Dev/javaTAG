@@ -14,6 +14,7 @@ public class Player {
     public static int intDefence; //Deprecated
     public List<Integer> playerStats;
     public List<List<Items>> playerInventory;
+    public List<String> classList;
 
 
     //Used only at startup, creates the base stats of the player, and an 2d list of the stats.
@@ -66,7 +67,7 @@ public class Player {
         return playerStats;
     }
 
-    public List<List<Items>> initializeTestInventory(){
+    public List<List<Items>> initializeTestInventory(){ //Used to test a very simple inventory system.
         List<List<Items>> inventory = new ArrayList<List<Items>>();
 
         List<Items> headSlot = new ArrayList<Items>();
@@ -104,27 +105,28 @@ public class Player {
     public static Player playerCreation(){
         Player player = new Player(); //Creates "Player"
         //Just a list of classes to choose from, it'll be small for now
-        ArrayList<String> classes = new ArrayList<>();
+        List<String> classes = new ArrayList<>();
         classes.add("Cleric");
         classes.add("Warrior");
-        //Starts player interaction
+        player.classList = classes;
+        //Shitty intro thing to get things going
         System.out.println("Hello traveler! What's your name?");
         System.out.print("Enter Name: ");
-        String playerName = Input.get().nextLine(); //get player input for their name
+        String playerName = Input.get().nextLine(); //get player input for their name, nextLine() used to get any spaces in the names
         player.name = playerName;
         System.out.println("Well then " + playerName + ", what kind of adventurer are you?");
-        int listNum = 1; //Only ued for this "for" loop
-        for(String choice : classes){
+        int listNum = 1; //Only used for this "for" loop
+        for(String choice : classes){ //Prints available classes for the player to choose, numbering them
             System.out.println(listNum + ". " + choice);
             listNum++;
         }
         System.out.print("Choose your class: ");
-        String playerClass = Input.get().next();
-        player.playerClass = playerClass;
+        String playerClass = Input.get().next(); //Only gets the class number, so there shouldn't be any spaces
+        player.playerClass = playerClass; //Sets the class number in the player object to the class number form the list
         String playerClassString;
-        playerClassString = classes.get(Integer.parseInt(playerClass) - 1);
+        playerClassString = classes.get(Integer.parseInt(playerClass) - 1); //This is so the upcoming print function knows the class name
 
-        System.out.print("\n " + playerName + " the " + playerClassString + " eh? Well good luck on your journey friend. \n");
+        System.out.print("\n " + player.name + " the " + playerClassString + " eh? Well good luck on your journey friend. \n");
 
         player.playerInventory = Items.generatePlayerInitialInventory(playerClass);
         player.playerStats = player.initializePlayerStats(player);
