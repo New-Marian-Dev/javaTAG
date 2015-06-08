@@ -126,11 +126,17 @@ public class Items {
                 clericSabatons.itemType = "Simple Sabatons";
                 clericSabatons.itemName = "Cleric Sabatons";
                 clericSabatons.itemSlot = inventory.get(3);
+                Items clericMace = new Items();
+                clericMace.itemName = "Mace";
+                clericMace.itemType = "Mace";
+                clericMace.itemSlot = inventory.get(4);
+                clericMace.isWeapon = true;
 
                 clericInventory.get(0).add(clericHelmet);
                 clericInventory.get(1).add(clericCuirass);
                 clericInventory.get(2).add(clericGrieves);
                 clericInventory.get(3).add(clericSabatons);
+                clericInventory.get(4).add(clericMace);
 
                 System.out.println("**Cleric Items Successfully added**"); //Comment this out later
 
@@ -142,25 +148,31 @@ public class Items {
                 //Then Warrior items
                 Items warriorHelmet = new Items();
                 warriorHelmet.itemType = "Simple Helmet";
-                warriorHelmet.itemName = "Cleric's Cap";
+                warriorHelmet.itemName = "Warrior's Cap";
                 warriorHelmet.itemSlot = inventory.get(0);
                 Items warriorCuirass = new Items();
                 warriorCuirass.itemType = "Simple Cuirass";
-                warriorCuirass.itemName = "Cleric's Vest";
+                warriorCuirass.itemName = "Warrior's Vest";
                 warriorCuirass.itemSlot = inventory.get(1);
                 Items warriorGrieves = new Items();
                 warriorGrieves.itemType = "Simple Grieves";
-                warriorGrieves.itemName = "Clerics Grieves";
+                warriorGrieves.itemName = "Warrior Grieves";
                 warriorGrieves.itemSlot = inventory.get(2);
                 Items warriorSabatons = new Items();
                 warriorSabatons.itemType = "Simple Sabatons";
-                warriorSabatons.itemName = "Cleric Sabatons";
+                warriorSabatons.itemName = "Warrior Sabatons";
                 warriorSabatons.itemSlot = inventory.get(3);
+                Items warriorSword = new Items();
+                warriorSword.isWeapon = true;
+                warriorSword.itemName = "Warrior's Sword";
+                warriorSword.itemType = "Short Sword";
+                warriorSword.itemSlot = inventory.get(4);
 
                 warriorInventory.get(0).add(warriorHelmet);
                 warriorInventory.get(1).add(warriorCuirass);
                 warriorInventory.get(2).add(warriorGrieves);
                 warriorInventory.get(3).add(warriorSabatons);
+                warriorInventory.get(4).add(warriorSword);
 
                 System.out.println("**Warrior Items Successfully added**"); //Comment this out later
 
