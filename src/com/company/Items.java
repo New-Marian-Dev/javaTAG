@@ -97,7 +97,7 @@ public class Items {
         inventory.add(legSlot);
         inventory.add(footSlot);
         inventory.add(weaponSlot);
-        //Be sure to make the types somewhat relevant to what they actually are
+        //Be sure to make the types somewhat relevant to what they actually are. They're more like a sub-description.
 
 
 
