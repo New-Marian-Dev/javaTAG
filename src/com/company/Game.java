@@ -4,10 +4,8 @@ package com.company;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
-/**
- * Created by adumbguy on 5/4/2015.
- */
+import java.util.Scanner;
+//Methods used for playing the game or doing key actions for the playing of the game that aren't specific to a different Class
 public class Game {
 
     public static void startGame(){
@@ -30,7 +28,10 @@ public class Game {
                 "-Magic: " + currentPlayer.playerStats.get(2));
         System.out.print("\n \n");
 
+        System.out.print("Choose a cell from [0-" + (cellList.size() - 1) + "]: ");
+        Scanner playerInput = Input.get();
 
+        cellPrinter(cellList.get(Integer.parseInt(playerInput.next().toString()))); //simply for debug purposes to test out cells directly, and to test transitions when they are implemented
 
     }
 
@@ -38,11 +39,28 @@ public class Game {
         ArrayList<List> cellList = new ArrayList<>();
         File dir = new File("Cells/");
         for(File file: dir.listFiles()){
-            List<String> cell = Input.readCellFile(file.getName());
-            cellList.add(cell);
-            System.out.println(file.getName() + " has loaded successfully");
+            if (!file.getName().equalsIgnoreCase("!!CELL_TEMPLATE")){
+                List<String> cell = Input.readCellFile(file.getName());
+                cellList.add(cell);
+                System.out.println(file.getName() + " has loaded successfully");
+            }
+
         }
+        System.out.print("\n");
         return cellList;
     }
 
+    public static void cellPrinter(List<String> cell){
+        for (String str: cell){
+            if (!str.equalsIgnoreCase("\n") && !str.contains("&!!&")){
+                System.out.println(str);
+            }else if(str.contains("&!!&")) {
+
+            }else{
+                break;
+            }
+        }
+    }
 }
+
+

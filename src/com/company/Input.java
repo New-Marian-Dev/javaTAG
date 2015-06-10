@@ -15,7 +15,12 @@ public class Input {
         List<String> cell = new ArrayList<>();
         try(BufferedReader in = new BufferedReader(new FileReader("Cells/" + cellName))){
             String str;
+            int x = 0;
             while ((str = in.readLine()) != null){
+                if (str.contains("-*")){
+                    x++;
+                  str = (Integer.toString(x) + ". ") + (str.replace("-*", ""));
+                }
                 cell.add(str);
             }
             in.close();
