@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="TAG">
+    <output-path>$PROJECT_DIR$/out/artifacts/TAG</output-path>
+    <root id="archive" name="TAG.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="javaTAG" />
+      <element id="directory" name="Cells">
+        <element id="dir-copy" path="$PROJECT_DIR$/Cells" />
+      </element>
+    </root>
+  </artifact>
+</component>

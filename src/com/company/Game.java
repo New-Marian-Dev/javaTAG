@@ -1,7 +1,7 @@
 package com.company;
 
 
-import java.io.File;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -10,7 +10,7 @@ public class Game {
 
     public static void startGame(){
 
-        ArrayList<List> cellList = Game.cellLoader(); //The index of any cell should be their place in the directory -1. (0 = firstFile)
+        ArrayList<List> cellList = Cell.cellLoader(); //The index of any cell should be their place in the directory -1. (0 = firstFile)
 
         Player currentPlayer = Player.playerCreation();
 
@@ -29,38 +29,21 @@ public class Game {
         System.out.print("\n \n");
 
         System.out.print("Choose a cell from [0-" + (cellList.size() - 1) + "]: ");
-        Scanner playerInput = Input.get();
-
-        cellPrinter(cellList.get(Integer.parseInt(playerInput.next().toString()))); //simply for debug purposes to test out cells directly, and to test transitions when they are implemented
-
-    }
-
-    public static ArrayList<List> cellLoader(){
-        ArrayList<List> cellList = new ArrayList<>();
-        File dir = new File("Cells/");
-        for(File file: dir.listFiles()){
-            if (!file.getName().equalsIgnoreCase("!!CELL_TEMPLATE")){
-                List<String> cell = Input.readCellFile(file.getName());
-                cellList.add(cell);
-                System.out.println(file.getName() + " has loaded successfully");
-            }
-
+        int x = 0;
+        for (List cells: cellList){
+            System.out.print("\n" + x + ". " + cells.get(0));
+            x++;
         }
         System.out.print("\n");
-        return cellList;
+        Scanner playerInput = Input.get();
+
+        Cell.cellPrinter(cellList.get(Integer.parseInt(playerInput.next()))); //simply for debug purposes to test out cells directly, and to test transitions when they are implemented
+
     }
 
-    public static void cellPrinter(List<String> cell){
-        for (String str: cell){
-            if (!str.equalsIgnoreCase("\n") && !str.contains("&!!&")){
-                System.out.println(str);
-            }else if(str.contains("&!!&")) {
 
-            }else{
-                break;
-            }
-        }
-    }
+
 }
+
 
 

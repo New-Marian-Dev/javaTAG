@@ -17,12 +17,10 @@ public class Input {
             String str;
             int x = 0;
             while ((str = in.readLine()) != null){
-                if (str.contains("-*")){
-                    x++;
-                  str = (Integer.toString(x) + ". ") + (str.replace("-*", ""));
-                }
+
                 cell.add(str);
             }
+            cell.add(0, "::"+cellName);
             in.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();

@@ -1,6 +1,0 @@
-Name Line: This line will hold the name for the cell.
-Body Text Line: This line will hold the text that will be displayed for the cell, and the story for the area, ect. There must be no line breaks here.
-&!!& Cell Modifier: If there are any reasons a cell should cause any problems to the PC, this line will hold identifiers for those effects.
-!This line will be left blank!
--*Including this line, all others will be movement or event options. [Requires the "-*" delimiter]
--*North, East, West, South, and any other options should be left on separate lines.

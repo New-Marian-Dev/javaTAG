@@ -109,7 +109,7 @@ public class Player {
         classes.add("Cleric");
         classes.add("Warrior");
         player.classList = classes;
-        //Shitty intro thing to get things going
+        //Shitty intro thing to get things going. It will NOT be this in final, hell it may be gone next version with the first iteration of the actual intro.
         System.out.println("Hello traveler! What's your name?");
         System.out.print("Enter Name: ");
         String playerName = Input.get().nextLine(); //get player input for their name, nextLine() used to get any spaces in the names
