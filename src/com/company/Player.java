@@ -9,11 +9,13 @@ public class Player {
 
     //Store name, health, and defence for later use. May be replaced by the List in the initialize Stats method.
     public String name;
+    public String race;
     public String playerClass;
     public static int intHealth; //Deprecated
     public static int intDefence; //Deprecated
     public List<Integer> playerStats;
     public List<List<Items>> playerInventory;
+    public List<String> raceList;
     public List<String> classList;
 
 
@@ -106,11 +108,11 @@ public class Player {
         Player player = new Player(); //Creates "Player"
         //Just a list of classes to choose from, it'll be small for now
         List<String> classes = new ArrayList<>();
-        classes.add("Cleric");
-        classes.add("Warrior");
+        classes.add("Medic");
+        classes.add("Mercenary");
         player.classList = classes;
         //Shitty intro thing to get things going. It will NOT be this in final, hell it may be gone next version with the first iteration of the actual intro.
-        System.out.println("Hello traveler! What's your name?");
+        System.out.println("As a new recruit in the Imperial Xerilian Astral Marines");
         System.out.print("Enter Name: ");
         String playerName = Input.get().nextLine(); //get player input for their name, nextLine() used to get any spaces in the names
         player.name = playerName;

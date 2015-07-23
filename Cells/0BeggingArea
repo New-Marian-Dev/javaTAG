@@ -3,6 +3,6 @@ Just another day here in the debug building break room, things are only half don
 You look down at your half-full "Code Monkey" mug and swirl it around a bit. You're feeling antsy, and probably should go do something.
 &!!&
 
--*Go walk around the office
--*Go the the restroom
--*Go write up bug reports
+-*Go walk around the office [[1aOffice]]
+-*Go the the restroom [[1bRestroom]]
+-*Go write up bug reports [[1cReports]]
